@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div id="background"></div>
+        <div id="background-next"></div>
+        <header id="datetime">
+            <strong id="clock-time">12:00:00</strong>
+            <span id="clock-date"></span>
+        </header>
+        <main>
+            <h1 id="dashboard-title">Pontus Thorén Dashboard</h1>
+            <section class="cards">
+                <div class="card" id="card-links">
+                    <h2>Links</h2>
+                    <ul id="links-list"></ul>
+                    <button id="add-link-btn">Add Link</button>
+                </div>
+                <div class="card" id="card-weather">
+                    <h2>Local Weather</h2>
+                    <ul id="weather-list">
+                        <li>Loading weather..</li>
+                    </ul>
+                </div>
+                <div class="card" id="card-news">
+                    <h2>Local News</h2>
+                    <ul id="local-news-list">
+                        <li>Loading news...</li>
+                    </ul>
+                </div>
+                <div class="card" id="card-notes">
+                    <h2>Notes</h2>
+                    <textarea
+                        id="notes-area"
+                        placeholder="Write something..."
+                    ></textarea>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="random-bkg">
+                <button id="random-bkg-btn">
+                    <i class="fa-solid fa-rotate"></i> Random Background
+                </button>
+            </div>
+        </footer>
+        <script src="/Javascript/weather.js"></script>
+        <script src="/Javascript/time.js"></script>
+        <script src="/Javascript/links.js"></script>
+        <script src="/Javascript/news.js"></script>
+        <script src="/Javascript/notes.js"></script>
+        <script src="/Javascript/background.js"></script>
+    </body>
+</html>
