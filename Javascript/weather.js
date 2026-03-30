@@ -3,12 +3,10 @@ async function fetchWeather() {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
 
-        // Hämta väderdata
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,weathercode&timezone=auto&forecast_days=3`;
         const response = await fetch(url);
         const data = await response.json();
 
-        // Koda om väder-kod till text och emoji
         function getWeather(code) {
             if (code === 0) return { text: "Klart", icon: "☀️" };
             if (code <= 3) return { text: "Molnigt", icon: "⛅" };
@@ -20,7 +18,6 @@ async function fetchWeather() {
 
         const days = ["Idag", "Imorgon", "Övermorgon"];
 
-        // Bygg listan
         const ul = document.getElementById("weather-list");
         ul.innerHTML = "";
 

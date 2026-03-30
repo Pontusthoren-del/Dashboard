@@ -1,10 +1,10 @@
 // Hämta sparade länkar från LocalStorage (eller tom lista)
 let links = JSON.parse(localStorage.getItem("links") || "[]");
-console.log("Sparade länkar:", links); // ← lägg till
+console.log("Sparade länkar:", links);
 
 function renderLinks() {
     const ul = document.getElementById("links-list");
-    console.log("ul element:", ul); // ← lägg till
+    console.log("ul element:", ul);
     ul.innerHTML = "";
 
     links.forEach((link, index) => {
