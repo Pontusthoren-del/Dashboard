@@ -3,10 +3,13 @@ const titleEl = document.getElementById("dashboard-title");
 const savedTitle = localStorage.getItem("dashboardTitle");
 if (savedTitle) titleEl.textContent = savedTitle;
 
-titleEl.addEventListener("click", () => {
-    const input = prompt("Ange ny titel:", titleEl.textContent);
-    if (input !== null && input.trim() !== "") {
-        titleEl.textContent = input.trim();
-        localStorage.setItem("dashboardTitle", input.trim());
+titleEl.contentEditable = "true";
+
+titleEl.addEventListener("blur", () => {
+    const newTitle = titleEl.textContent.trim();
+    if (newTitle !== "") {
+        localStorage.setItem("dashboardTitle", newTitle);
+    } else {
+        titleEl.textContent = savedTitle || "Dashboard";
     }
 });
